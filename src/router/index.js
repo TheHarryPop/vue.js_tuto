@@ -1,25 +1,45 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from "@/App.vue";
+
+import PublicLayout from "@/views/public/Layout.vue";
 import Home from "@/views/public/Home.vue";
 import Cocktail from "@/views/public/Cocktail.vue";
 import Contact from "@/views/public/Contact.vue";
 import Notfound from "@/views/public/Notfound.vue";
 
+import AdminLayout from "@/views/admin/Layout.vue";
+import Dashboard from "@/views/admin/Dashboard.vue";
+
+import UserIndex from "@/views/admin/users/UserIndex.vue";
+import UserEdit from "@/views/admin/users/UserEdit.vue";
+import UserAdd from "@/views/admin/users/UserAdd.vue";
+
+import CocktailIndex from "@/views/admin/cocktails/CocktailIndex.vue";
+import CocktailEdit from "@/views/admin/cocktails/CocktailEdit.vue";
+
 const routes = [
+
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "public",
+    component: PublicLayout,
+    children: [
+      {path: '', name: 'Home', component: Home},
+      {path: 'cocktails', name: 'cocktails', component: Cocktail},
+      {path: 'contact', name: 'contact', component: Contact},
+    ]
   },
   {
-    path: '/cocktails',
-    name: 'cocktails',
-    component: Cocktail
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact
+    path: "/admin",
+    name: "admin",
+    component: AdminLayout,
+    children: [
+      {path: 'dashboard', name: 'dashboard', component: Dashboard},
+      {path: 'users/index', component: UserIndex},
+      {path: 'users/edit/:id', component: UserEdit},
+      {path: 'users/add', component: UserAdd},
+      {path: 'cocktails/index', component: CocktailIndex},
+      {path: 'cocktails/edit/:id', component: CocktailEdit},
+    ]
   },
   {
     path: '/:pathMatch(.*)*',

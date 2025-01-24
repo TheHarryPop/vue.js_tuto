@@ -1,10 +1,4 @@
 <template>
-  <img alt="Vue logo" src="@/assets/logo.png">
-  <nav>
-    <router-link to="/">Accueil</router-link> |
-    <router-link to="/cocktails">Cocktails</router-link> |
-    <router-link to="/contact">Contact</router-link>
-  </nav>
   <router-view/>
 </template>
 
