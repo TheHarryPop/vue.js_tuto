@@ -23,7 +23,7 @@ const routes = [
     children: [
       {path: 'dashboard', name: 'dashboard', component: Admin.Dashboard},
       {path: 'users/index', component: Admin.UserIndex},
-      {path: 'users/edit/:id', component: Admin.UserEdit},
+      {path: 'users/edit/:id', component: Admin.UserEdit, props: true},
       {path: 'users/add', component: Admin.UserAdd},
       {path: 'cocktails/index', component: Admin.CocktailIndex},
       {path: 'cocktails/edit/:id', component: Admin.CocktailEdit},

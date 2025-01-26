@@ -1,12 +1,12 @@
 <template>
   <div>
-    cocktail Edit works
+    User Add works
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CocktailEdit',
+  name: 'UserAdd',
 }
 </script>
 
